@@ -129,7 +129,7 @@
               <li class="nav-item">
                 <a href="{{ route ('pages.asset')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add asset</p>
+                  <p>Assets</p>
                 </a>
               </li>
               <li class="nav-item">
