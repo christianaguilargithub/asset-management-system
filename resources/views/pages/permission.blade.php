@@ -147,12 +147,15 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Back to Portal Page
+                Logout
               </p>
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
           </li>
         </ul>
       </nav>
@@ -164,11 +167,20 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-  
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+         
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
-   permission
+   Permissions
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

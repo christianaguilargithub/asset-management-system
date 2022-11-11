@@ -147,12 +147,15 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Back to Portal Page
+                Logout
               </p>
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
           </li>
         </ul>
       </nav>
