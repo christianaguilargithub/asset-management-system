@@ -194,18 +194,25 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                     @foreach ($products as $product)
+                      <td>{{ ++$i }}</td>
+                      <td>{{ $product->name }}</td>
+                      <td>{{ $product->detail }}</td>
+                      <td><img src="/image/{{ $product->image }}" ></td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                        <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                          <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                          <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                       </td>
-                      <td></td>
-                      <td><span class="badge bg-danger">55%</span></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
+                {!! $products->links() !!}
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
