@@ -127,13 +127,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route ('pages.asset')}}" class="nav-link active">
+                <a href="{{ route ('pages.asset')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Assets</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route ('pages.transaction')}}" class="nav-link">
+                <a href="{{ route ('pages.transaction')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Transactions</p>
                 </a>
@@ -173,14 +173,18 @@
     <!-- Main content -->
   
     <section class="content">
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
     <div class="container-fluid" style="margin-top:20px;">
         <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Bordered Table</h3>
+                <h3 class="card-title">Transactions Table</h3>
               </div>
-
               
               <!-- /.card-header -->
               <div class="card-body">
@@ -188,24 +192,31 @@
                   <thead>
                     <tr>
                       <th style="width: 5px">#</th>
-                      <th style="width: 10px">Asset</th>
-                      <th style="width: 30px">Image</th>
+                      <th style="width: 5px">Asset</th>
+                      <th style="width: 30px">Name</th>
                       <th style="width: 30px">Description</th>
                       <th style="width: 40px">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td><span class="badge bg-danger">55%</span></td>
-                    </tr>
+                  @foreach ($products as $product)
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td><img src="/image/{{ $product->image }}" width="100px"></td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->detail }}</td>
+                    <td>
+                        <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+            
+                           
+                            @csrf
+                            @method('DELETE')
+                
+                            <button type="submit" class="btn btn-danger">View</button>
+                        </form>
+                    </td>
+                </tr>
+        @endforeach
                   </tbody>
                 </table>
               </div>

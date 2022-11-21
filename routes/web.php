@@ -19,9 +19,10 @@ Route::get('/', function () {
 
 
 Route::resource('products', ProductController::class);
+Route::resource('transactions', ProductController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/transactions', 'App\Http\Controllers\PagesController@transaction')->name('pages.transaction');
+Route::get('/transactions', 'App\Http\Controllers\TransactionController@index')->name('pages.transaction');
 Route::get('/permissions', 'App\Http\Controllers\PagesController@permission')->name('pages.permission');
 Route::get('/assets', 'App\Http\Controllers\AssetController@index')->name('pages.asset');
