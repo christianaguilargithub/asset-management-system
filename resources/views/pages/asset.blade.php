@@ -180,6 +180,10 @@
               <div class="card-header">
                 <h3 class="card-title">Bordered Table</h3>
               </div>
+
+              <div class="pull-right" >
+                <a class="btn btn-success" href="{{ route('products.create') }}" > Create New Asset</a>
+            </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table class="table table-bordered">

@@ -192,7 +192,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Total Assets</span>
                 <span class="info-box-number">
-                  350
+                  {{ $count = DB::table('products')->count();}}
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -206,7 +206,9 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Total Users</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-number">
+                {{ $count = DB::table('users')->count();}}
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
