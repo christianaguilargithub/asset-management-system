@@ -183,7 +183,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Transactions Table</h3>
+                <h3 class="card-title">Transactions </h3>
               </div>
               
               <!-- /.card-header -->
@@ -208,11 +208,11 @@
                     <td>
                         <form action="{{ route('products.destroy',$product->id) }}" method="POST">
             
-                           
+                          
                             @csrf
                             @method('DELETE')
                 
-                            <button type="submit" class="btn btn-danger">View</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </td>
                 </tr>
