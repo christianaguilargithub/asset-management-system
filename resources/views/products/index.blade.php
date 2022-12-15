@@ -194,10 +194,10 @@
                   <thead>
                     <tr>
                       <th style="width: 5px">#</th>
-                      <th style="width: 5px">Asset</th>
-                      <th style="width: 30px">Name</th>
-                      <th style="width: 30px">Description</th>
-                      <th style="width: 40px">Action</th>
+                      <th style="width: 20px">Asset</th>
+                      <th style="width: 150px">Name</th>
+                      <th style="width: 250px">Description</th>
+                      <th style="width: 150px">Action</th>
                     </tr>
                   </thead>
                   <tbody>

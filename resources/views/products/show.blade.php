@@ -1,35 +1,35 @@
 @extends('products.layout')
-   
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Product</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
-            </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card-container{
+    width:80vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.card{
+    width:500px;
+    height:300px;
+    display:flex;
+    flex-direction:row;
+}
+</style>
+
+<div class="card-container">
+    <div class="card">
+        <img src="/image/{{ $product->image }}" style="">
+        <div>
+            <h1>Name</h1>
+            <h1>{{ $product->name }}</h1>
+            <h1>
+                
+            </h1>
+            <p class="title">{{ $product->detail }}</p>
+            <hr>
+            <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
         </div>
     </div>
-     
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {{ $product->name }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Details:</strong>
-                {{ $product->detail }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Image:</strong>
-                <img src="/image/{{ $product->image }}" width="500px">
-            </div>
-        </div>
-    </div>
+</div>
 @endsection
